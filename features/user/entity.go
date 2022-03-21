@@ -17,12 +17,12 @@ type Bussiness interface {
 	GetUserById(id int) (user User, err error)
 	CreateUser(data User) (err error)
 	EditUser(id int) (usr User, err error)
-	LoginUser(user User) (usr User, err error)
+	LoginUser(data User) (usr User, err error)
 }
 type Data interface {
 	SelectAllUser(User) (user []User, err error)
 	SelectUserById(id int) (user User, err error)
 	InsertUser(data User) (err error)
 	UpdateUser(id int) (usr User, err error)
-	CheckAccount(User) (user User, err error)
+	CheckAccount(data User) (user User, err error)
 }

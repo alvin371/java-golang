@@ -17,7 +17,7 @@ type User struct {
 
 type UserAuth struct {
 	Email    string `json:"email" form:"email"`
-	Password string `json:"password" form:"passowrd"`
+	Password string `json:"password" form:"password"`
 }
 
 func FromCore(core User) user.User {

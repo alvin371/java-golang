@@ -56,6 +56,8 @@ func (ud *UserData) CheckAccount(data user.User) (user.User, error) {
 	var userAuth User
 	err := ud.DB.Where("email = ?", data.Email).First(&userAuth).Error
 	// Eliminate null data
+
+	fmt.Println("ini data ", data)
 	if userAuth.Email == "" && userAuth.ID == 0 {
 		return user.User{}, errors.New("user not found")
 	}

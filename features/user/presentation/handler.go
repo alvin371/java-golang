@@ -92,7 +92,7 @@ func (usrHandler *UserHandler) GetAllUserHandler(e echo.Context) error {
 func (usrHandler *UserHandler) LoginUserHandler(e echo.Context) error {
 	AccountAuth := req.UserAuth{}
 	e.Bind(&AccountAuth)
-	fmt.Println(AccountAuth)
+	fmt.Println("ini dari handler", AccountAuth)
 	data, err := usrHandler.userBussiness.LoginUser(AccountAuth.ToUserAuth())
 	if err != nil {
 		return e.JSON(http.StatusForbidden, map[string]interface{}{

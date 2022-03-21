@@ -1,6 +1,7 @@
 package bussiness
 
 import (
+	"fmt"
 	"java-agro/features/user"
 	middlewares "java-agro/middleware"
 
@@ -48,6 +49,7 @@ func (ub *UserBussiness) EditUser(id int) (usr user.User, err error) {
 }
 func (ub *UserBussiness) LoginUser(user user.User) (usr user.User, err error) {
 	accountData, err := ub.userData.CheckAccount(user)
+	fmt.Println("ini user bussiness", user)
 	if err != nil {
 		return user, err
 	}
